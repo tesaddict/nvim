@@ -1,12 +1,9 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
-
--- DO NOT INCLUDE THIS
-vim.opt.rtp:append("~/personal/streamer-tools")
--- DO NOT INCLUDE THIS
+require("methos.set")
+require("methos.remap")
+require("methos.packer")
 
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
+local MethosGroup = augroup('Methos', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -27,7 +24,7 @@ autocmd('TextYankPost', {
 })
 
 autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
+    group = MethosGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
