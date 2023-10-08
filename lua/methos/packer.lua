@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
   use("tpope/vim-fugitive")
   use("folke/zen-mode.nvim")
   use("laytan/cloak.nvim")
-
+  use {
+      'neoclide/coc.nvim', branch = 'release'
+  }
 end)
 
