@@ -12,12 +12,13 @@ return require('packer').startup(function(use)
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
   use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
+	  "ellisonleao/gruvbox.nvim",
+	  as = 'gruvbox',
 	  config = function()
-		  vim.cmd('colorscheme rose-pine')
+		  vim.cmd('colorscheme gruvbox')
 	  end
   })
 
