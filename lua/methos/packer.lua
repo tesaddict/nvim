@@ -30,5 +30,26 @@ return require('packer').startup(function(use)
   use {
       'neoclide/coc.nvim', branch = 'release'
   }
+  use { 'alexghergh/nvim-tmux-navigation', config = function()
+        require'nvim-tmux-navigation'.setup {
+            disable_when_zoomed = true, -- defaults to false
+            keybindings = {
+                left = "<C-h>",
+                down = "<C-j>",
+                up = "<C-k>",
+                right = "<C-l>",
+                last_active = "<C-\\>",
+                next = "<C-Space>",
+            }
+        }
+    end
+    }
+  use {
+			'nvim-treesitter/nvim-treesitter',
+			run = function()
+				local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+				ts_update()
+			end,}
+  use("nvim-treesitter/playground")
 end)
 

@@ -70,7 +70,7 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 
--- Symbol renaming
+-- Symbol renaning
 keyset("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 
